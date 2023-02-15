@@ -53,14 +53,17 @@ document.getElementById('verify-pin').addEventListener('click', function(){
     const typedNumberField =document.getElementById('type-numbers');
     const typedNumber = typedNumberField.value;
 
+    
+    const pinFailureMessage = document.getElementById('pin-failure');
+    const pinSuccessMessage = document.getElementById('pin-success');
 
     if(typedNumber === currentPin){
-        const pinSuccessMessage = document.getElementById('pin-success');
         pinSuccessMessage.style.display = 'block';
+        pinFailureMessage.style.display = 'none';
     }
     else{
-        const pinFailureMessage = document.getElementById('pin-failure');
         pinFailureMessage.style.display = 'block';
+        pinSuccessMessage.style.display = 'none';
         
     };
 });
